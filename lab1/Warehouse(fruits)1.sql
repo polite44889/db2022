@@ -32,9 +32,9 @@ CREATE TABLE "Price" (
   "fruit" text
 );
 
-ALTER TABLE "Storage" ADD FOREIGN KEY ("storage") REFERENCES "Fruit" ("storage");
+ALTER TABLE "Storage" ADD FOREIGN KEY ("id") REFERENCES "Fruit" ("storage");
 
-ALTER TABLE "Country" ADD FOREIGN KEY ("country") REFERENCES "Fruit" ("country");
+ALTER TABLE "Country" ADD FOREIGN KEY ("id") REFERENCES "Fruit" ("country");
 
 ALTER TABLE "Categories" ADD FOREIGN KEY ("id_categories") REFERENCES "Country" ("categories");
 

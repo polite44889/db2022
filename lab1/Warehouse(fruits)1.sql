@@ -15,7 +15,7 @@ CREATE TABLE "Country" (
   "id" integer PRIMARY KEY,
   "country" text,
   "manufacturer" text,
-  "purchase_price" float,
+  "purchase_price" integer,
   "categories" varchar
 );
 

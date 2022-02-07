@@ -14,8 +14,7 @@ CREATE TABLE "Categories" (
 CREATE TABLE "Country" (
   "id" integer PRIMARY KEY,
   "country" text,
-  "manufacturer" text,
-  "purchase_price" integer,
+  "price" integer,
   "categories" varchar
 );
 
@@ -38,4 +37,4 @@ ALTER TABLE "Country" ADD FOREIGN KEY ("id") REFERENCES "Fruit" ("country");
 
 ALTER TABLE "Categories" ADD FOREIGN KEY ("id_categories") REFERENCES "Country" ("categories");
 
-ALTER TABLE "Price" ADD FOREIGN KEY ("id") REFERENCES "Country" ("purchase_price");
+ALTER TABLE "Price" ADD FOREIGN KEY ("id") REFERENCES "Country" ("price");

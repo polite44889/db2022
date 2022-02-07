@@ -1,7 +1,7 @@
 CREATE TABLE "Fruit" (
   "id" integer PRIMARY KEY,
   "weight" float,
-  "country" text,
+  "country" integer,
   "storage" integer
 );
 

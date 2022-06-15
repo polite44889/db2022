@@ -1,0 +1,29 @@
+<div>
+    <div class="submit-form bg-dark text-light">
+        <div *ngIf="!submitted">
+            <div class="form-group">
+                <label for="fruitNaming">Fruit Naming</label>
+                <input type="text" class="form-control" id="fruitNaming" required [(ngModel)]="fruit.fruitNaming" name="fruitNaming" />
+
+                <div class=" form-group ">
+                    <label for="weight">weight</label>
+                    <input class="form-control " id="weight " required [(ngModel)]="fruit.weight " name="weight " />
+                </div>
+                <div class="form-group ">
+                    <label for="country">country</label>
+                    <input class="form-control " id="country " required [(ngModel)]="fruit.country " name="country " />
+                </div>
+                <div class="form-group ">
+                    <label for="category">category</label>
+                    <input class="form-control " id="category " required [(ngModel)]="fruit.category " name="category " />
+                </div>
+                <div class="form-group ">
+                    <label for="price">price</label>
+                    <input class="form-control " id="price " required [(ngModel)]="fruit.price " name="price " />
+                </div>
+                <button (click)="saveFruit() " class="btn btn-success ">Submit</button>
+
+                <div *ngIf="submitted ">
+                    <h4>Entry was submitted successfully!</h4>
+                    <button class="btn btn-success " (click)="newFruit() ">Add</button>
+                </div>

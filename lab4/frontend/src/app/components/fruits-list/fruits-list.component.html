@@ -1,0 +1,27 @@
+<div class="list row bg-dark">
+    <div class="col-md-8">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search" [(ngModel)]="fruitNaming" />
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" (click)="searchFruit()">
+          Search
+        </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h4>Fruits List</h4>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let fruit of fruits; let i = index" [class.active]="i == currentIndex" (click)="setActiveFruit(fruit, i)">
+                {{ fruit.fruitNaming }}
+            </li>
+        </ul>
+
+        <button class="m-3 btn btn-sm btn-danger" (click)="removeAllFruits()">
+      Remove All
+    </button>
+    </div>
+    <div class="col-md-6">
+        <app-fruit-details [viewMode]="true" [currentFruit]="currentFruit"></app-fruit-details>
+    </div>
+</div>

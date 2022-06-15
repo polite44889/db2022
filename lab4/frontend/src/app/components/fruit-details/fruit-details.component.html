@@ -1,0 +1,70 @@
+<div *ngIf="viewMode; else editable">
+    <div *ngIf="currentFruit.id">
+        <h4>Fruit</h4>
+        <div>
+            <label><strong>fruitNaming:</strong></label> {{ currentFruit.fruitNaming }}
+        </div>
+        <div>
+            <label><strong>weight</strong></label> {{ currentFruit.weight }}
+        </div>
+        <div>
+            <label><strong>country:</strong></label> {{ currentFruit.country }}
+        </div>
+        <div>
+            <label><strong>category:</strong></label> {{ currentFruit.category }}
+        </div>
+        <div>
+            <label><strong>price:</strong></label> {{ currentFruit.price }}
+        </div>
+        <a class="badge badge-warning" routerLink="/fruits/{{ currentFruit.id }}">
+      Edit
+    </a>
+    </div>
+
+    <div *ngIf="!currentFruit">
+        <br />
+        <p>Please click on an entry...</p>
+    </div>
+</div>
+
+<ng-template #editable>
+    <div *ngIf="currentFruit.id" class="edit-form">
+        <h4>Fruit</h4>
+        <form>
+            <div class="form-group">
+                <label for="fruitNaming">fruitNaming</label>
+                <input type="text" class="form-control" id="fruitNaming" [(ngModel)]="currentFruit.fruitNaming" name="fruitNaming" />
+            </div>
+            <div class="form-group">
+                <label for="weight">weight</label>
+                <input type="text" class="form-control" id="weight" [(ngModel)]="currentFruit.weight" name="weight" />
+            </div>
+            <div class="form-group">
+                <label for="country">country</label>
+                <input type="text" class="form-control" id="country" [(ngModel)]="currentFruit.country" name="country" />
+            </div>
+            <div class="form-group">
+                <label for="category">category</label>
+                <input type="text" class="form-control" id="category" [(ngModel)]="currentFruit.category" name="category" />
+            </div>
+            <div class="form-group">
+                <label for="price">price</label>
+                <input type="text" class="form-control" id="price" [(ngModel)]="currentFruit.price" name="price" />
+            </div>
+        </form>
+
+        <button class="badge badge-danger mr-2" (click)="deleteFruit()">
+      Delete
+    </button>
+
+        <button type="submit" class="badge badge-success mb-2" (click)="updateFruit()">
+      Update
+    </button>
+        <p>{{ message }}</p>
+    </div>
+
+    <div *ngIf="!currentFruit.id">
+        <br />
+        <p>Cannot access this entry...</p>
+    </div>
+</ng-template>
